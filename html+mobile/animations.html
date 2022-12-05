@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HESS | Animations</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/style.css" rel="stylesheet">
+        <script>
+
+window.addEventListener('scroll', () => {
+  document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+}, false);
+        </script>
+        <script src="https://kit.fontawesome.com/f446357d23.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header id="navbar">
+            <nav class="flex container">
+                <div class="logo flex">
+                    <div class="header-left">
+                        <a href="index.html"><img src="images/hess-logo.svg" alt="HESS Corp Logo"></a>
+                    </div>
+                </div>
+                <ul class="main-nav flex">
+                    <li><a href="" >Financial Highlights</a></li>
+                    <li><a href="sustainability.html">Sustainability</a></li>
+                    <li><a href="">Plans for 2023</a></li>
+                    <li><a href="">FAQs</a></li>
+                    <li><a href="index.html#shareholders">Letter to Shareholders</a></li>
+                    <li><a href="#"><span class="bold">Download PDF</span></a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="mobile-nav flex">
+            <div>
+                <a href="index.html"><img src="images/hess-logo.svg" alt="HESS Corp Logo"></a>
+            </div>
+            <div class="burger-box flex"> 
+                  <div class="plus">
+                      <img src="images/plus.svg" alt="Menu plus icon">
+                  </div>
+            </div>
+        </div>
+    </div>
+        <div class="flex">
+            <div class="sidebar flex mobile-hide">
+                <ul class="flex">
+                    <li><a href="system.html">Design System</a></li>
+                    <li><a href="typography.html">Typography</a></li>
+                    <li><a href="colors.html">Colors</a></li>
+                    <li><a href="#">Links</a></li>
+                    <li class="selected"><a href="animations.html">Animations</a></li>
+                    <li class="back-to-site">
+                        <div class="back-to-site flex">
+                            <div class="flex back-arrow">
+                                <a class="flex" href="index.html"><img  src="images/arrow2.svg"></a>
+                            </div>
+                            <div class="flex back-text">
+                                <a href="index.html">Back to Site</a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="system-content animations">
+                <h3 class="animations-title">Just go with the flow...</h3>
+                <p>The animations and interactions on HESS web are meant to flow smoothly and feel very fluid and organic.</p>
+                <div class="animation1 flex">
+                    <div class="anim-terr"><img src="images/square-terracota.svg"></div>
+                    <div class="anim-blue"><img src="images/square-blue.svg"></div>
+                    <div class="anim-dg"><img src="images/square-darkgreen2.svg"></div>
+
+
+                </div>
+                <h6>Hover effects</h6>
+                <div class="flex hover">
+                    <p>This works better on desktop!</p>
+                </div>
+                <p>Hover effects that are simple and clean and lead to user to explore the site further.</p>
+                <div class="flex buttons">
+                    <a href="#" class="button1">I'm so hoverable</a>
+                    <a href="#" class="faux-link">I'm also very hoverable</a>
+                    <a href="#" class="hover-underline-animation">Am I hoverable?</a>
+                 </div>
+                 <footer>
+                    <div class="flex container">
+                        <ul>
+                            <li><a href="#">Financial Highlights</a></li>
+                            <li><a href="sustainability.html">Sustainability</a></li>
+                            <li><a href="#">Plans for 2023</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="index.html#shareholders">Letter to Shareholders</a></li>
+                            <li><a href="system.html">Design System</a></li>
+                            <li><a href="#"><span class="bold">Download PDF</span></a></li>
+                        </ul>
+                        <div>
+                            <a href="index.html"><img src="images/logo-white.svg"></a>
+                        </div>
+                    </div>
+                </footer>
+            </div><!--things go inside this div for content-->
+        </div> 
+           
+     </body>
+</html>
