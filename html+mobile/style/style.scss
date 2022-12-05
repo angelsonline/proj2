@@ -1,0 +1,1439 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+// COLOR
+$green: #00704A;
+$gray: #1d1d1d;
+$white: white;
+$terra: #D64933; 
+$mint: #69DC9E;
+$dg: #1C3426;
+$white: white;
+
+// TYPE
+$mono: "Azeret Mono", monospace;
+$arimo: "Arimo", Arial, Helvetica, sans-serif;
+$dm: "DM Sans", Arial, Helvetica, sans-serif;
+$font-family_5: "Arimos", Arial, Helvetica, sans-serif;
+
+// MIXINS
+@mixin phone { @media (max-width: 599px) { @content} };
+@mixin tablet { @media (min-width: 600px) { @content} };
+@mixin desktop { @media (min-width: 900px) { @content} }
+
+
+
+
+@keyframes prog {
+	to {
+		width: 180%;
+	} 
+}
+
+
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slide {
+	0% {
+		opacity: 0;
+		left: 13vh;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		transform: translateY(80px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes bar {
+	0% {
+		transform: scaleX(100%);
+	}
+	100% {
+		transform: scaleX(50%);
+	}
+}
+@keyframes stalk {
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes battery {
+	0% {
+		transform: scaleY(100%);
+	}
+	100% {
+		transform: scaleY(4%);
+	}
+}
+@keyframes scale {
+	from {
+		transform: scale(10%);
+	}
+	to {
+		transform: scale(100%);
+	}
+}
+@keyframes scaleX {
+	from {
+		transformx: scale(10%);
+	}
+	from {
+		transform: scaleX(10%);
+	}
+}
+@keyframes scaleY {
+	from {
+		transform: scaleY(10%);
+	}
+	to {
+		transform: scaleY(100%);
+	}
+}
+
+@keyframes scale2 {
+	0% {
+		transform: scale(10%);
+	}
+	50% {
+		transform: scale(100%);
+	}
+	100% {
+		transform: scale(10%);
+	}
+}
+@keyframes scale3 {
+	0% {
+		transform: scale(1000%, 10%);
+	}
+	50% {
+		transform: scale(200%, 10%);
+	}
+	100% {
+		transform: scale(1000%, 10%);
+	}
+}
+@keyframes scale4 {
+	0% {
+		transform: scale(15%, 550%);
+	}
+	50% {
+		transform: scale(15%, 150%);
+	}
+	100% {
+		transform: scale(15%, 550%);
+	}
+}
+
+
+@keyframes animation-1 {
+	0% {
+		transform-origin: left;
+	}
+	100% {
+		transform-origin: left;
+		width: 100%;
+	}
+}
+@keyframes animation-1-post {
+	0% {
+		transform-origin: right;
+		width: 100%;
+	}
+	100% {
+		transform-origin: right;
+		width: 10%;
+		transform: scaleX(1);
+	}
+}
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 1rem; 
+
+	@include phone {
+		font-size: 0.8rem;  
+	}
+}
+
+h1 {
+	font-family: $mono;
+	font-size: 4.3rem;
+	text-align: center;
+	line-height: 1em;
+	letter-spacing: -3px;
+	color: $green;
+	margin: 0;
+
+	@include phone { 
+		font-size: 3.6rem; 
+	}
+}
+
+h2 {
+	font-family: $arimo;
+	font-size: 4.3rem;
+	margin: 1.5rem 0;
+}
+
+h3 {
+	font-family: $arimo;
+	font-size: 3.125rem;
+	letter-spacing: -2px;
+	text-align: center;
+	margin: 0;
+	span {
+		transition: 0.2s;
+		&:hover {
+			color: $green;
+			letter-spacing: -3px;
+		}
+	}
+}
+
+h4 {
+	font-family: $arimo;
+	font-size: 1.875rem;
+	margin: 0;
+}
+
+h5 {
+	font-family: $mono;
+	font-size: 3.125rem;
+	font-weight: 800;
+	text-align: center;
+}
+
+h6 {
+	font-family: $mono;
+	font-size: 2.5rem;
+	font-weight: 500;
+	text-align: center;
+	margin: 5rem 0 2rem 0;
+}
+
+p {
+	font-family: $dm;
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 166%;
+}
+
+a {
+	font-family: $arimo;
+	font-weight: 500;
+	text-decoration: none;
+	color: $gray;
+	&:hover {
+		cursor: url('../images/cursor.svg'), auto;
+	}
+}
+
+.button1 {
+	background-color: $green;
+	color: $white;
+	padding: 0.625rem 1.4375rem;
+	border-radius: 2px;
+	display: inline-block;
+	transition: 0.2s;
+	&:hover {
+		background-color: $dg;
+	}
+
+	@include phone {
+		padding: 1rem 1.9rem; 
+	}
+}
+
+li {
+	list-style: none;
+}
+
+.container {
+	max-width: 1260px;
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	cursor: url('../images/cursor.svg'), auto;
+}
+
+.mobile-hide {
+	@include phone {
+		display: none;
+	}
+}
+
+.desktop-hide {
+	display: none;
+	@include phone {
+		display: block;
+	}
+}
+
+.scroll-progress {
+	position: fixed;
+	top: 0%;
+	background-color: $terra;
+	height: 6px;
+	width: 0%;
+	animation: prog 3s;
+	animation-play-state: paused;
+	animation-delay: calc(var(--scroll) * -1s);
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+	z-index: 6;
+	border-radius: 2px 0;
+}
+
+/* ------------------------------------------------------------------------HEADER / NAV-------------------------- */
+header {
+	background-color: $white;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 3;
+	transition: top 0.5s;
+	border-bottom: #1d1d1d 2px solid;
+
+	@include phone {
+		display: none;
+	}
+}
+.logo {
+	border-right: #1d1d1d 2px solid;
+	width: 20%;
+	fill: #00704A;
+}
+.header-left {
+	width: 40%;
+	margin-left: 25%;
+	padding: 0.7rem;
+	img {
+		width: 100%;
+	}
+}
+
+
+nav {
+	justify-content: space-between;
+	align-items: center;
+	ul {
+		li {
+			text-align: center;
+		}
+	}
+}
+.main-nav {
+	a {
+		padding: 0 1rem;
+		font-family: $mono;
+		font-size: 0.8rem;
+		font-weight: 400;
+		transition: 0.5s;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.mobile-nav {
+	display: none; 
+	position: fixed;
+	z-index: 6; 
+	top: 0;
+	width: 100%;
+	background-color: white;
+	border-bottom: 2px solid $gray;
+	margin: 0 auto; 
+
+	div:nth-child(1) {
+		width: 70%;
+		border-right: solid 2px $gray; 
+		padding: 1rem 0 1rem 3rem;
+		
+		img {
+			width: 25%;  
+		}
+	}
+
+	div:nth-child(2) { 
+		width: 30%;
+		padding: 1rem 0;
+	}
+
+	@include phone {
+		display: flex; 
+	}
+}
+
+.burger-box {
+	justify-content: center;
+	align-items: center;
+
+	div:nth-child(1) {
+		text-align: center;
+		padding: 0;  
+		border: none;
+		justify-content: center;
+		align-items: center; 
+	} 
+}
+ 
+#burgerMenu { 
+	position: absolute;
+	top: 0;
+	left: 0;
+	flex-flow: column;
+	display: none;  
+
+	a {
+		display: block;
+	}
+}
+
+/* ------------------------------------------------------------------------FOOTER-------------------------- */
+footer {
+	ul {
+		li {
+			a {
+				&:hover {
+					text-decoration: underline;
+				}
+				color: $white;
+				font-family: $mono;
+				font-weight: 300;
+			}
+			padding: 0.4rem 0;
+		}
+
+		@include phone {
+			padding: 0; 
+		}
+	}
+	background-color: $dg;
+	.flex {
+		justify-content: space-between;
+		padding: 1.5rem 0;
+
+		@include phone {
+			flex-flow: column-reverse; 
+			justify-content: center;
+			text-align: center;
+		}
+		div {
+			img {
+				width: 80%;
+				padding-top: 2rem;
+				@include phone {
+					width: 30%; 
+				}
+			}
+		}
+	}
+}
+.bold {
+	font-weight: 700;
+}
+
+/*---------------------HOME------------------------------------------------------------------------------*/
+.home-hero {
+	background-image: url("../images/home-hero.jpg");
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	top: 0;
+}
+.scroll {
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	width: 10%;
+	margin: 0 auto;
+	position: relative;
+	top: -10vh;
+	animation: opacity 2s 2s ease forwards;
+	opacity: 0;
+	transition: 0.2s all;
+	p {
+		font-family: $mono;
+		font-weight: 700;
+		margin: 0;
+		color: $terra; 
+	}
+	&:hover {
+		top: -9.5vh;
+	}
+}
+.wrapper {
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	height: 100vh;
+	animation: slide 5s ease;
+	h6 {
+		margin: 0;
+		color: $green;
+	}
+}
+.company {
+	margin: 0 auto 10rem;
+	padding-top: 10rem;
+	justify-content: space-between;
+	h3 {
+		width: 40%;
+		text-align: right;
+		@include phone {
+			text-align: center;
+			width: 100%;
+		}
+	}
+	p {
+		width: 50%;
+		display: inline-block;
+		text-align: left;
+		margin: 0.6rem auto;
+		@include phone {
+			text-align: center;
+			width: 85%;
+		}
+	}
+
+	@include phone {
+		flex-flow: column; 
+	}
+}
+
+// ------------------------
+.icon-box {
+	width: 50%;
+	transition: 0.2s;
+	@include phone {
+		width: 100%; 
+	}
+}
+section {
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 100%; 
+
+	@include phone { 
+		flex-flow: column; 
+	}
+}
+.section-left {
+	width: 45%;
+	text-align: center; 
+	&:hover {
+		.link {
+			i {
+				padding-left: 5%;
+			}
+			a {
+				text-decoration: underline;
+			}
+		}
+		.section-text {
+			padding-left: 4.5%;
+		}
+	}
+	@include phone {
+		flex-flow: column;
+		align-items: center; 
+		width: 100%;
+	} 
+}
+
+
+
+.section-text {
+	flex-flow: column;
+	width: 100%;
+	text-align: left;
+	justify-content: flex-end;
+	padding-left: 5%;
+	transition: 0.2s; 
+	h3 {
+		text-align: left;
+		@include phone {
+			text-align: center;
+			margin: 2rem auto; 
+		}
+	}
+
+	@include phone {
+		text-align: center;
+		justify-content: center; 
+	}
+}
+.link {
+	align-items: center;
+	transition: 0.2s;
+	a {
+		&:hover {
+			transition: 0.2s;
+		}
+	}
+	i {
+		padding-left: 3%;
+		font-size: 1.2rem;
+		transition: 0.2s;
+	}
+}
+.section-right {
+	width: 45%;
+	text-align: center; 
+	&:hover {
+		.link {
+			i {
+				padding-left: 5%;
+			}
+			a {
+				text-decoration: underline;
+			}
+		}
+		.section-text {
+			padding-left: 4.5%;
+		}
+	}
+	@include phone {
+		flex-flow: column;
+		align-items: center; 
+		width: 100%;
+		margin-top: 10rem;  
+	} 
+}
+
+
+
+
+.block {
+	display: block;
+}
+article {
+	width: 100%;
+	background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #C6EEF3 100%);
+}
+.letter {
+	margin-top: 8rem;
+	padding: 7rem 2rem 19rem 2rem;
+	h3 {
+		margin-bottom: 3rem;
+	}
+	p {
+		text-align: center;
+	}
+}
+
+/*---------------------SUSTAINABILITY------------------------------------------------------------------------------*/
+.sus-hero {
+	background-image: url("../images/sustainability.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	overflow: hidden;
+	width: 100%;
+}
+.sus-hero-block {
+	background-color: $white;
+	width: 50%;
+	padding: 4rem;
+	position: relative;
+	top: 20vh;
+	left: 7vw;
+	animation: slide 1s forwards ease-out;
+	opacity: 0;
+	p {
+		margin-bottom: 3rem;
+		display: inline-block;
+	}
+
+	h2 {
+		@include phone {
+			font-size: 2.6rem;
+		}
+	}
+
+	@include phone {
+		width: 80%; 
+		top: 15vh;  
+		padding: 3rem; 
+	}
+}
+.environment {
+	justify-content: space-around;
+	padding-top: 5rem;
+	margin-top: 5rem;
+	max-width: 1200px;
+	margin: auto;
+	align-items: flex-end;
+	h3 {
+		text-align: right;
+
+		@include phone {
+			text-align: center;
+		}
+	}
+	p {
+		text-align: right;
+
+		@include phone {
+			text-align: justify;
+			margin-top: 3rem;
+		} 
+	}
+	div {
+		&:nth-child(1) {
+			width: 40%;
+		}
+		&:nth-child(2) {
+			width: 60%;
+			padding-left: 3rem;
+			@include phone {
+				padding-left: 0; 
+				width: 85%; 
+			}
+		}
+	}
+	img {
+		width: 100%;
+		margin-bottom: 1rem;
+	}
+	.environment-left {
+		p {
+			text-align: left;
+		}
+	}
+
+	@include phone {
+		flex-flow: column; 
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
+
+.environment-left {
+	width: 60%;
+	@include phone {
+		width: 85%;
+	}
+}
+.env2 {
+	padding-top: 2rem;
+	justify-content: space-between;
+	margin-bottom: 5rem;
+	max-width: 1200px;
+	margin: 0 auto; 
+
+	@include phone {
+		flex-flow: column-reverse; 
+		align-items: center; 
+		text-align: justify;  
+	}
+}
+.pie {
+	width: 40%;
+	justify-content: center;
+
+	@include phone {
+		width: 85%; 
+		margin-bottom: 2rem;
+	}
+	img {
+		width: 80%;
+	}
+}
+
+/* -----------------BLACKOUT------------------------- */
+.blackout {
+	background-color: black;
+}
+.blackout-container {
+	width: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
+	color: $white;
+	>div {
+		padding: 5rem 0;
+	}
+}
+.horizontal-bar {
+	height: 60px;
+	width: 80%;
+	position: relative;
+	margin: 0 auto;
+	border: solid 2px white;
+}
+.fade-in {
+	animation: fade-in 1s;
+}
+.bottom-bar {
+	background-image: url("../images/smoke.jpg");
+	background-size: cover;
+	overflow: hidden;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	transform-origin: left;
+	animation: bar 3s forwards;
+	z-index: 2;
+	border-right: 4px solid white;
+}
+.top-bar {
+	background: linear-gradient(90deg, #00704A 50%, #1C3426 80.73%);
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	justify-content: flex-end;
+	align-items: center;
+	p {
+		font-family: $mono;
+		display: inline-block;
+		margin-right: 4%;
+		@include phone {
+			font-size: 1rem; 
+		}
+	}
+}
+.stalk-money {
+	width: 90%;
+	margin: 0 auto;
+	justify-content: space-evenly;
+	h5 {
+		font-weight: 700;
+		font-size: 4.375;
+		font-family: $arimo;
+		margin: 0;
+	}
+	p {
+		font-size: 1.2rem;
+		margin: 0%;
+		text-align: center;
+	}
+
+	@include phone {
+		flex-flow: column; 
+	}
+}
+.stalk-box {
+	&:nth-child(1) {
+		animation: stalk 2s forwards ease-out;
+	}
+	&:nth-child(2) {
+		opacity: 0;
+		animation: stalk 2s 0.6s forwards ease-out;
+	}
+	&:nth-child(3) {
+		opacity: 0;
+		animation: stalk 2s 1.2s forwards ease-out;
+	}
+
+	@include phone {
+		margin-top: 4rem; 
+	}
+}
+.green {
+	color: $mint;
+}
+.vertical-bar {
+	border: white solid 2px;
+	height: 300px;
+	width: 60%;
+	position: relative;
+	margin: 0 auto;
+	p {
+		font-family: $mono;
+		position: absolute;
+		top: 79%;
+		right: 2%;
+	}
+}
+.waste-bar {
+	position: absolute;
+	top: 0%;
+	bottom: 0;
+	width: 100%;
+	transform-origin: bottom;
+	background-color: $green;
+	animation: battery 3s forwards;
+}
+
+/* ------------------------------------------------------------------------DESIGN SYSTEM-------------------------- */
+.system-content {
+	position: relative;
+	left: 20%;
+	top: 10vh;
+	width: 80%;
+	padding: 2rem;
+	p {
+		margin-top: 4rem;
+		width: 90%;
+		text-align: justify;
+	}
+
+	@include phone {
+		width: 100%; 
+		padding: 1rem; 
+		position: static;  
+		justify-content: center;
+	}
+}
+
+.test { 
+}
+
+.sidebar {
+	width: 20%;
+	background-color: $white;
+	border-right: 2px #1d1d1d solid;
+	height: 100%;
+	position: fixed;
+	justify-content: center;
+	ul {
+		flex-flow: column;
+		align-items: center;
+		width: 100%;
+		padding: 0;
+		li {
+			&:nth-child(1) {
+				padding-top: 7rem;
+			}
+			font-size: 1.2em;
+			width: 100%;
+			text-align: center;
+			border-bottom: 2px solid #1d1d1d;
+			&:nth-child(6) {
+				border: none;
+				div {
+					a {
+						&:hover {
+							background-color: transparent;
+							color: $gray;
+							text-decoration: underline;
+						}
+					}
+					&:hover {
+						.back-arrow {
+							margin-right: 1rem;
+						}
+					}
+				}
+			}
+			&:hover {
+				color: $white;
+			}
+			a {
+				font-family: $mono;
+				font-size: 1rem;
+				font-weight: 400;
+				display: block;
+				width: 100%;
+				height: 100%;
+				padding: 1.6rem 0;
+				transition: 0.1s;
+				&:hover {
+					background-color: $green;
+					letter-spacing: -1px;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+.selected {
+	a {
+		background-color: $green;
+		letter-spacing: -1px;
+		color: $white;
+	}
+}
+.parts-box {
+	a {
+		&:hover {
+			background-color: $green;
+			letter-spacing: -1px;
+			color: $white;
+		}
+		width: 100%;
+		font-family: $mono;
+		text-align: center;
+		font-weight: 400;
+		border: solid #1d1d1d 2px;
+		display: inline-block;
+		color: $gray;
+		padding: 2rem;
+		margin: 1rem;
+		border-radius: 2px;
+		text-align: center;
+		transition: all 0.2s;
+	}
+
+	@include phone {
+		font-size: 1rem; 
+		padding: 0; 
+	}
+	width: 45%;
+}
+.back-to-site {
+	width: 70%;
+	margin: 0 auto;
+	max-width: 300px;
+	align-items: center;
+	justify-content: space-around;
+	img {
+		display: block;
+		width: 80%;
+		min-width: 8px;
+		transform: rotateZ(90deg);
+	}
+}
+.back-arrow {
+	width: 1.5rem;
+	justify-content: right;
+	transition: 0.2s;
+}
+
+/* -----------------COLOR------------------------- */
+.color {
+	max-width: 980px;
+	margin: 0 auto;
+	p {
+		margin:  16rem auto 10rem; 
+	} 
+	h3 {
+		text-align: left;
+	}
+
+	@include phone {
+		& > div img {
+			width: 100%;  
+		}
+	} 
+	
+}
+
+.palette-container {
+	width: 100%;
+	height: 60vh;
+	position: relative;
+	@include phone {
+		width: 60%;
+		margin: 0 auto;  
+	}
+}
+
+.hess-green {
+	position: absolute;
+	top: 190px;
+	transform-origin: top left;
+	animation: scale 3s ease;
+	transition: 0.5s;
+	&:hover {
+		transform: scale(108%);
+		transform-origin: center;
+	}
+}
+.terracotta {
+	position: absolute;
+	left: 30%;
+	top: 30px;
+	transform-origin: top right;
+	animation: scale 2s ease;
+	transition: 0.5s;
+	&:hover {
+		transform: scale(108%);
+		transform-origin: center;
+		.tooltip {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+.dark-green {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform-origin: right;
+	animation: scaleX 3s ease;
+	transition: 0.5s;
+	&:hover {
+		transform: scale(108%);
+		transform-origin: center;
+		.tooltip {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+.blue {
+	position: absolute;
+	left: 60%;
+	top: 30%;
+	transform-origin: bottom;
+	animation: scaleY 3s ease;
+	transition: 0.5s;
+	&:hover {
+		transform: scale(108%);
+		transform-origin: center;
+	}
+}
+.mint {
+	position: absolute;
+	left: 70%;
+	top: 5%;
+	animation: scale 2s ease;
+	transition: 0.5s;
+	&:hover {
+		transform: scale(108%);
+		transform-origin: center;
+	}
+}
+.tooltip {
+	position: absolute;
+	top: -45px;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.2s;
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+	img {
+		width: 70%;
+	}
+}
+.pattern {
+	height: 100%;
+	width: 100%; 
+	position: absolute;
+	float: left; 
+	background-color: transparent;
+	z-index: -1;
+
+	@include phone {
+		width: 85%;  
+	}
+} 
+.sqblue {
+	position: relative;
+	top: 23%;
+	transform-origin: top left;
+	animation: scale2 4s ease infinite;
+}
+.sqdg {
+	position: relative;
+	top: 27%;
+	left: 83%;
+	animation: scale2 4s ease infinite;
+	transform-origin: top right;
+}
+.sqdg2 {
+	position: relative;
+	top: -8%;
+	left: -32%; 
+	transform: scale(1000%, 10%);
+	animation: scale3 4s ease infinite;
+}
+.sqterra {
+	position: relative;
+	top: 58%;
+	width: 10%;
+	animation: scale2 4s ease infinite;
+}
+.sqterra2 {
+	position: relative;
+	top: -7%;
+	left: 30%;
+	width: 3%;
+	animation: scale2 4s ease infinite;
+}
+.sqmint {
+	position: relative;
+	top: 17%;
+	left: 45%;
+	animation: scale2 4s ease infinite;
+}
+.sqgreen {
+	position: relative;
+	left: 10%;
+	top: 6%;
+	width: 10%;
+	animation: scale2 4s ease infinite;
+	transform-origin: bottom right;
+}
+.sqblue2 {
+	position: relative;
+	top: 48%;
+	left: 25vw;
+	transform: scale(15%, 550%);
+	animation: scale4 4s infinite;
+}
+.parts {
+	width: 60%;
+	margin: 5rem auto 15rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	@include phone {
+		width: 90%; 
+		align-items: center;  
+	}
+}
+.left {
+	text-align: left;
+	margin: 2rem 0 1rem;
+
+	@include phone {
+		margin-top: 6rem; 
+	}
+}
+
+/* -----------------TYPOGRAPHY------------------------- */
+
+.type-title {
+	white-space: nowrap;
+	overflow: hidden;
+	margin: 2rem auto;
+	animation: typing 3.5s steps(40, end);
+	@include phone {
+		padding-top: 5rem; 
+	}
+}
+.typechart {
+	margin: 3rem auto;
+	max-width: 1000px;
+}
+.r1 {
+	margin: 0;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.2s;
+	h6 {
+		font-size: 1.4rem;
+		margin: 2rem 0;
+		width: 100%;
+
+		@include phone {
+			font-size: 0.9rem; 
+		}
+	}
+}
+.r2 {
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.2s;
+	&:hover {
+		background-color: $green;
+		padding: 0 1rem;
+		color: $white;
+	}
+	h6 {
+		font-size: 1rem;
+		font-weight: 300;
+		width: 100%;
+		text-align: center;
+		margin: 1rem 1rem;
+	}
+	.scale1 {
+		font-size: 4.375rem; 
+		font-weight: 600;
+		@include phone {
+			font-size: 3.125rem; 
+		}
+	}
+	.scale2 {
+		font-weight: 800;
+		font-family: $arimo;
+		font-size: 3.125rem;
+		@include phone {
+			font-size: 2.5rem; 
+		} 
+	}
+	.scale3 {
+		font-weight: 800;
+		font-size: 1.875rem;
+		font-family: $arimo;
+	}
+	.scale4 {
+		font-weight: 400;
+		font-size: 1.25rem;
+		font-family: $arimo;
+	}
+	.scale5 {
+		font-weight: 400;
+		font-size: 1rem; 
+		font-family: $dm;
+	}
+	.scale6 {
+		font-weight: 600;
+		font-size: 1rem; 
+		font-family: $font-family_5;
+	}
+	.scale7 {
+		font-weight: 400;
+		font-size: 16px;
+		font-family: $mono;
+	}
+}
+
+/* -----------------ANIMATIONS------------------------- */
+.hover {
+
+	p {
+		text-align: center;
+		margin: 0 auto;
+		display: none; 
+
+		@include phone {
+			display: block;
+		}
+	} 
+}
+
+
+.animations-title {
+	@include phone {
+		padding-top: 7rem; 
+	}
+}
+
+.animation1 {
+	justify-content: space-evenly;
+}
+.anim-terr {
+	img {
+		width: 150px;
+		animation: scale2 2s infinite;
+		@include phone {
+			width: 80px; 
+		}
+	}
+}
+.anim-blue {
+	img {
+		width: 150px;
+		animation: scale2 2s 0.5s infinite;
+		animation-fill-mode: backwards;
+		@include phone {
+			width: 80px; 
+		}
+	}
+}
+.anim-dg {
+	img {
+		width: 150px;
+		animation: scale2 2s 1s infinite;
+		animation-fill-mode: backwards;
+		@include phone {
+			width: 80px; 
+		} 
+	}
+
+	.animations {
+		h3 {
+			text-align: left;
+			letter-spacing: -2px;
+		}
+	}
+}
+.buttons {
+	justify-content: left;
+	align-items: center;
+	margin-bottom: 9rem;
+	@include phone {
+		flex-flow: column; 
+		margin-top: 3rem;
+		
+	}
+}
+.faux-link {
+	border: 2px solid #1d1d1d;
+	font-family: $mono;
+	font-weight: 500;
+	padding: 1rem;
+	border-radius: 2px;
+	margin: 0 2rem;
+	transition: 0.2s all;
+	&:hover {
+		background-color: $green;
+		color: $white;
+		letter-spacing: -0.5px;
+	}
+	a {
+		padding: 1rem;
+	}
+	@include phone {
+		margin-top: 3rem; 
+	} 
+}
+.hover-underline-animation {
+	display: inline-block;
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: $green;
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-out;
+	}
+	&:hover {
+		&::after {
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		}
+	}
+
+	@include phone {
+		margin-top: 3rem; 
+	}
+}
